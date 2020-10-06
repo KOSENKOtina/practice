@@ -2,7 +2,7 @@ exports.config = {
     runner: 'local',
 
     specs: [
-        './test/specs/async1-10.js'
+        './test/specs/1-10.js'
     ],
     // Patterns to exclude.
     exclude: [

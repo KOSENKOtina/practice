@@ -1,31 +1,30 @@
+const credsPage = require('../pageobjects/CredsPage');
 
 
 describe("  ", () => {
     let email, password;
-    before(async () => {
-        browser.url('https://phptravels.com/demo');
-        // const locator = await $$('.col-md-8 div.row');
-        // const textPromise = locator.map(e => e.getText());
-        // const credsArr = await Promise.all(textPromise);
-        // const firstcredsArr = credsArr[0].split(/[ | \n]/);
-        // email = firstcredsArr[1];
-        // password = firstcredsArr[3];
-
-       // browser.navigateTo('https://www.phptravels.net/');
-
-    })
-
-    it("should take credentials", async () => {
-        const locator = await $$('.col-md-8 div.row');
-        const textPromise = locator.map(e => e.getText());
-        const credsArr = await Promise.all(textPromise);
-        const firstcredsArr = credsArr[0].split(/[ | \n]/);
+    const credsPage = new credsPage();
+    it("should take credentials", () => {
+        credsPage.navigate();
+        const locator = $('.col-md-8 div.row');
+        const textPromise = locator.getText();
+        const firstcredsArr = textPromise.split(/[ | \n]/);
         email = firstcredsArr[1];
         password = firstcredsArr[3];
+        browser.url('https://www.phptravels.net/');
+        const loginBtn = $('.dropdown-login a.dropdown-item.active');
+        const loginlink = loginBtn.getAttribute('href')
+        browser.url(loginlink);
+        const emailField = $('input[type=\'email\']');
+        emailField.clearValue();
+        emailField.setValue(email);
+        const passwordField = $('input[type=\'password\']');
+        passwordField.clearValue();
+        passwordField.setValue(password);
+        const loginButton = $('button=Login');
+        loginButton.click();
+        //console.log('wait')
 
-        browser.navigateTo('https://www.phptravels.net/');
-        const myAccountBtn = await $('*=My Account');
-        myAccountBtn.click();
 
     });
 
