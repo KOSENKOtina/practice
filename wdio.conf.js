@@ -2,7 +2,7 @@ exports.config = {
     runner: 'local',
 
     specs: [
-        './test/specs/async1-10.js'
+        './test/specs/1-10.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -122,7 +122,7 @@ exports.config = {
     // See the full list at http://mochajs.org/
     mochaOpts: {
         ui: 'bdd',
-        timeout: 60000
+        timeout: 6000000
     },
     //
     // =====
