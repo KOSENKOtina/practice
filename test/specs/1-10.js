@@ -71,8 +71,8 @@ describe("  ", () => {
             HomePage.clickSearch();
         });
     });
-    describe('On results page', () => {
-       it('should specify max amount of days')
-    });
+    // describe('On results page', () => {
+    //    it('should specify max amount of days')
+    // });
 
 })
