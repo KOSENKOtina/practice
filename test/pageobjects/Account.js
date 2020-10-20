@@ -1,13 +1,12 @@
 class Account {
     constructor() {
-        this.homeBtnLocator = 'a[title=\'home\']'
+        this.homeBtnLocator = 'ul li a[title=\'home\']';
     }
 
     get homeBtn() {
-        $(this.homeBtnLocator).waitForDisplayed();
         return $(this.homeBtnLocator);
     }
 
 }
 
-module.exports = new Account()
+module.exports.Account = new Account();

@@ -35,38 +35,44 @@ describe("  ", () => {
             LoginPage.setPasswordValue(password);
         });
         it('should click login page', () => {
+            LoginPage.loginBtn.waitForDisplayed();
             LoginPage.loginBtn.click();
         });
     });
     describe('On account page', () => {
         it('should click on home page', () => {
-            Account.homeBtn.click();
+            Account.Account.homeBtn.waitForDisplayed();
+            browser.pause(1000);
+            Account.Account.homeBtn.click();
         });
     });
     describe('On home page', () => {
         it('should select Tours tab', () => {
-            HomePage.getTabByName('tours');
+            browser.maximizeWindow();
+            HomePage.getTabByName('tours').click();
+        });
+
+        it('should set a distanation', () => {
+            //browser.pause(500);
+            HomePage.setDestination('Big Bus Tour of Dubai');
+        });
+
+        it('should set a tour type', () => {
+            HomePage.setTourType();
+        });
+
+        it('should set correct date', () => {
+            HomePage.setDate('06/05/2021');
         });
         it('should add 1 adult to a trip', () => {
-            HomePage.addAdultByTab('tours');
-        })
-    })
-
-
-//     const toursTab = $('ul li a[data-name=\'tours\']');
-//     toursTab.waitForDisplayed();
-//     toursTab.click();
-//     const addAdultsBtn = $('#tours .bootstrap-touchspin-up');
-//     addAdultsBtn.click();
-//     addAdultsBtn.click();
-//
-//
-//     const boatType = $('#boattype_chosen a.chosen-single');
-//     boatType.click();
-//     browser.pause(2000);
-//     const ferryOption = $('li.active-result=Ferry');
-//     ferryOption.click();
-//     browser.pause(2000);
-// });
+            HomePage.addAdultByTab();
+        });
+        it('should press search button', ()=> {
+            HomePage.clickSearch();
+        });
+    });
+    describe('On results page', () => {
+       it('should specify max amount of days')
+    });
 
 })
