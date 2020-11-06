@@ -1,7 +1,4 @@
-// const CredsPage = require('../pageobjects/CredsPage');
 const HomePage = require('../pageobjects/HomePage');
-// const LoginPage = require('../pageobjects/LoginPage');
-// const Account = require('../pageobjects/Account');
 const BookOptions = require('../pageobjects/BookOptions');
 const PersonalDetails = require('../pageobjects/PersonalDetails')
 
@@ -76,6 +73,6 @@ describe("  ", () => {
         it('should click confirm button', () => {
             const confirmBookingBtn = PersonalDetails.confirmBtn;
             confirmBookingBtn.click();
-        })
+        });
     });
 })

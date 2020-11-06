@@ -11,20 +11,20 @@ const lazyPassword = 'demouser';
 
 describe("  ", () => {
     //let email, password;
-    // xdescribe('On page with credentials', () => {
-    //     before(() => {
-    //         CredsPage.navigate();
-    //         browser.pause(2000);
-    //     })
-    //     it("should take email", () => {
-    //         email = CredsPage.email;
-    //         expect(email.length > 0).toBe(true, 'email is empty');
-    //     });
-    //     it('should take password', () => {
-    //         password = CredsPage.password;
-    //         expect(password.length > 0).toBe(true, 'password is empty');
-    //     });
-    // });
+    xdescribe('On page with credentials', () => {
+        before(() => {
+            CredsPage.navigate();
+            browser.pause(2000);
+        })
+        it("should take email", () => {
+            email = CredsPage.email;
+            expect(email.length > 0).toBe(true, 'email is empty');
+        });
+        it('should take password', () => {
+            password = CredsPage.password;
+            expect(password.length > 0).toBe(true, 'password is empty');
+        });
+    });
     describe('From Home page', () => {
         it('should navigate to login page', () => {
             HomePage.navigate();
