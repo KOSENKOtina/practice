@@ -1,6 +1,8 @@
 class CredsPage {
     constructor() {
-        this.url = 'https://phptravels.com/demo'
+        this.url = 'https://phptravels.com/demo';
+        this.fullEmailxPath = '/html/body/div[2]/main/section[1]/div/div/div[2]/div/div/div[2]/div/div/div[2]/div[2]/div/text()[1]';
+        this.fullPasswordxPath = '/html/body/div[2]/main/section[1]/div/div/div[2]/div/div/div[2]/div/div/div[2]/div[2]/div/text()[2]';
     }
 
     navigate() {
@@ -8,18 +10,18 @@ class CredsPage {
     };
 
     get email() {
-        const locator = $('.col-md-8 div.row');
-        locator.waitForDisplayed();
+        const locator = $('=Email');
+        locator.scrollIntoView();
         const textPromise = locator.getText();
-        const firstcredsArr = textPromise.split(/[ | \n]/);
-        return firstcredsArr[1];
+       // const firstcredsArr = textPromise.split(/[ | \n]/);
+        return textPromise//firstcredsArr[1];
     }
 
     get password() {
-        const locator = $('.col-md-8 div.row');
+        const locator = $(this.fullPasswordxPath);
         const textPromise = locator.getText();
-        const firstcredsArr = textPromise.split(/[ | \n]/);
-        return firstcredsArr[3];
+      //  const firstcredsArr = textPromise.split(/[ | \n]/);
+        return textPromise;//firstcredsArr[3];
     }
 }
 

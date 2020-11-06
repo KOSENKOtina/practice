@@ -2,7 +2,7 @@ exports.config = {
     runner: 'local',
 
     specs: [
-        './test/specs/1-10.js'
+        './test/specs/notLoggedIn1-10.js'
     ],
     // Patterns to exclude.
     exclude: [
