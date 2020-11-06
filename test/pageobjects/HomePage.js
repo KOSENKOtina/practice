@@ -6,7 +6,7 @@ class HomePage {
         this.tourTypeLocator = '#tours a.chosen-single';
         this.tourTypeDDNoptionLocator = '[data-option-array-index="4"]';
         this.dateLocator = '#tours input#DateTours';
-       // this.searchBtnLocator = '#tours .icon_set_1_icon-66';//'#tours .searching';//'#tours button[type="submit"]';
+        this.searchBtnLocator = '#tours button[type="submit"]';
     }
 
     navigate() {
@@ -19,9 +19,9 @@ class HomePage {
     get destination(){
         return $(this.destinationFieldLocator);
     }
-    // get searchBtn(){
-    //     return $(this.searchBtnLocator);
-    // }
+    get searchBtn(){
+        return $(this.searchBtnLocator);
+    }
 
     getLoginLink() {
         return this.loginBtn.getAttribute('href')
@@ -56,10 +56,8 @@ class HomePage {
         $(this.dateLocator).clearValue();
         $(this.dateLocator).setValue(date);
     }
-
-    clickSearch(){
-        const search = $('#tours button[type="submit"]');
-        search.click();
+    clickSearch() {
+        this.searchBtn.click();
     }
 }
 
